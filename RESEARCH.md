@@ -4,6 +4,10 @@
 **Source:** "https://streamlit.io"  
 **Reason:** Investigate different Python web frameworks  
 
+**Article:** "Django vs Flask: Which is the Best Python Web Framework?"  
+**Source:** "https://blog.jetbrains.com/pycharm/2023/11/django-vs-flask-which-is-the-best-python-web-framework/#:~:text=Django%20is%20generally%20used%20for,add%20the%20functionality%20they%20need."  
+**Reason:** Investigate different Python web frameworks  
+
 **Article:** "Flask Tutorial in Visual Studio Code"  
 **Source:** https://code.visualstudio.com/docs/python/tutorial-flask  
 **Reason:** First look into Flask  
@@ -20,7 +24,7 @@
 **Source:** https://app.pluralsight.com/library/courses/flask-creating-model-layer/table-of-contents  
 **Reason:** Needed to learn how to use a DB with Flask to support content  
 
-**Article:** "Adding a new SSH key to your GitHub account  
+**Article:** "Adding a new SSH key to your GitHub account"  
 **Source:** https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account  
 **Reason:** Getting setup on my laptop to check in code  
 
