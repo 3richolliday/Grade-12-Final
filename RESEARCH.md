@@ -1,8 +1,8 @@
 # Resources used for research
 
-Article: "Streamlit"
-Source: "https://streamlit.io"
-Reason: Investigate different Python web frameworks
+**Article:** "Streamlit"
+**Source:** "https://streamlit.io"
+**Reason:** Investigate different Python web frameworks
 
 Article: "Flask Tutorial in Visual Studio Code"
 Source: https://code.visualstudio.com/docs/python/tutorial-flask
