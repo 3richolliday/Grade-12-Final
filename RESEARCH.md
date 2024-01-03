@@ -9,7 +9,7 @@
 **Reason:** First look into Flask  
 
 **Video:** "Flask Getting Started"  
-**Source:** Pluralsight.com  
+**Source:** https://app.pluralsight.com/library/courses/flask-getting-started/table-of-contents  
 **Reason:** Getting up to speed to Flask and whether it would be appropriate here. Build POC.  
 
 **Article:** "User a Flask Blueprint to Architect Your Application"  
@@ -17,7 +17,7 @@
 **Reason:** Some of the material I was reading referenced 'blueprints' and I needed to understand how they worked  
 
 **Video:** "Creating a Model Layer for Flask 2"  
-**Source:** "Pluralsight.com"  
+**Source:** https://app.pluralsight.com/library/courses/flask-creating-model-layer/table-of-contents  
 **Reason:** Needed to learn how to use a DB with Flask to support content  
 
 **Article:** "Adding a new SSH key to your GitHub account  
