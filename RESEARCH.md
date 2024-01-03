@@ -12,6 +12,10 @@ Video: "Flask Getting Started"
 Source: Pluralsight.com
 Reason: Getting up to speed to Flask and whether it would be appropriate here. Build POC.
 
+Article: "User a Flask Blueprint to Architect Your Application"
+Source: https://realpython.com/flask-blueprint/
+Reason: Some of the material I was reading referenced 'blueprints' and I needed to understand how they worked
+
 Video: "Creating a Model Layer for Flask 2"
 Source: "Pluralsight.com"
 Reason: Needed to learn how to use a DB with Flask to support content 
