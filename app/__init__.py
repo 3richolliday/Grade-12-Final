@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from config import Config
 from app.sqla import sqla
 
@@ -14,6 +14,6 @@ def create_app(config_class=Config):
 
     @app.route("/")
     def index_view():
-        return "<h1>Langauge Master</h1>"
+        return render_template("index.html")
     
     return app
