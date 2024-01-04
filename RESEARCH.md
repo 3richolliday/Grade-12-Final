@@ -28,3 +28,10 @@
 **Source:** https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account  
 **Reason:** Getting setup on my laptop to check in code  
 
+**Video:** "SQLAlchemy Core 1 in Python: Getting Started"  
+**Source:** https://app.pluralsight.com/library/courses/sqlalchemy-core-python-getting-started/table-of-contents  
+**Reason:** Needed to learn how to use a DB with Python to support content  
+
+**Article:** "Flask-Login"  
+**Source:** https://flask-login.readthedocs.io/en/latest/  
+**Reason:** Researching an off-the-shelf user management extenstion 
