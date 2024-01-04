@@ -8,6 +8,24 @@ h1 {
     font-size: 72px;
 }
 
+p {
+    font-size: 24px;
+}
+
 .center {
     text-align: center;
   }
+
+button {
+    
+    border: none;
+    
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
