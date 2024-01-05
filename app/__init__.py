@@ -14,12 +14,14 @@ def create_app(config_class=Config):
     sqla.init_app(app)
 
     # Inititialize Flask-Login
-    # login_manager.login_view = 'app.auth.login'
-    # login_manager.init_app(app)
+    login_manager.init_app(app)
 
     # Initialize Blueprints
     from app.auth import bp as auth_bp
     app.register_blueprint(auth_bp, url_prefix='/auth')
+
+    from app.assess import bp as assess_bp
+    app.register_blueprint(assess_bp, url_prefix='/assess')
 
     @app.route("/")
     def index_view():
