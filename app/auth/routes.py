@@ -1,9 +1,10 @@
 from app.auth import bp
+from flask import render_template
 from werkzeug.security import generate_password_hash, check_password_hash
 
 @bp.route('/login')
 def login():
-    return 'Login'
+    return render_template('auth/login.html')
 
 @bp.route('/signup')
 def signup():

@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" 
-        href="{{ url_for('static', filename='style.css') }}">
+    <title>Language Master</title>
+    <!-- <link rel="stylesheet" 
+        href="{{ url_for('static', filename='style.css') }}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />    
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+    <section class="hero is-primary is-meduim"></section>
+        <div class="hero-body">
+            {% block content %}
+            {% endblock %}
+        </div>        
+    </section>    
 </body>
  <!-- Site footer -->
  <footer>
-    <div style="float:right">
+    <div class="hero-foot" text-align="right">
         <h5>Eric Holliday. December, 2023</h5>
     </div>
 </footer>
