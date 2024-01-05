@@ -24,7 +24,7 @@ def create_app(config_class=Config):
     app.register_blueprint(assess_bp, url_prefix='/assess')
 
     @app.route("/")
-    def index_view():
+    def index():
         return render_template("index.html")
     
     return app

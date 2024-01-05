@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container has-text-centered">
-        <p class="title">Language Master</h1>
-        <p class="subtitletitle">
-            Language assessment in minutes!
-        </p>
-        <div align="middle">
-            <img src="{{ url_for('static', filename='English-French.png')  }}"/>
-            
-        </div>
-        <div align="middle">
-            <button>Begin</button>
-        </div>
-    </div>
+   
+<p class="title is-1">Language Master</p>
+<p class="subtitle is-3">
+    Language assessment in minutes!
+</p>
+<div align="middle">
+    <img src="{{ url_for('static', filename='English-French.png')  }}"/>
+    
+</div>
+<div align="middle">
+    <button>Begin</button>
+</div>
+   
 {% endblock %}

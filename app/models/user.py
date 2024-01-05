@@ -8,7 +8,7 @@ class User(sqla.Model, UserMixin):
     uuid = sqla.Column(sqla.String(64), nullable=False, default=lambda: str(uuid4())) 
     email = sqla.Column(sqla.String(100), unique=True)
     password = sqla.Column(sqla.String(100))
-    username = sqla.Column(sqla.String(1000))
+    name = sqla.Column(sqla.String(1000))
 
     def get_id(self):
         return self.id
@@ -22,5 +22,5 @@ class User(sqla.Model, UserMixin):
     def get_password(self):
         return self.answer
     
-    def get_username(self):
+    def get_name(self):
         return self.answer

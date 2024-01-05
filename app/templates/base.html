@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Master</title>
-    <!-- <link rel="stylesheet" 
-        href="{{ url_for('static', filename='style.css') }}"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />    
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 </head>
+
 <body>
-    <section class="hero is-primary is-meduim"></section>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="{{ url_for('index') }}" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="{{ url_for('auth.login') }}" class="navbar-item">
+                                Login
+                            </a>
+                            <a href="{{ url_for('auth.signup') }}" class="navbar-item">
+                                Sign Up
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
         <div class="hero-body">
-            {% block content %}
-            {% endblock %}
+            <div class="container has-text-centered">
+                {% block content %}
+                {% endblock %}
+            </div>
         </div>        
     </section>    
 </body>
- <!-- Site footer -->
- <footer>
-    <div class="hero-foot" text-align="right">
-        <h5>Eric Holliday. December, 2023</h5>
-    </div>
-</footer>
 </html>
