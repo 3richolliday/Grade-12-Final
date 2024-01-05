@@ -12,7 +12,7 @@ def signup():
     # user = User(id=2, email="ericholliday20@gmail.com", username="eholliday")
     # sqla.session.add(user)
     # sqla.session.commit()
-    # return 'Signup'
+    return 'Signup'
 
 @bp.route('/logout')
 def logout():
