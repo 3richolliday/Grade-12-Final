@@ -3,5 +3,15 @@
 {% block content %}
     <h1 class="title">
         You have completed the assessment!
+
+        {{assessment.date_completed}}
+    </h1>
+
+    <h1>
+        You achieved {{assessment.total_score}} out of {{assessment.total_score_possible}}
+    </h1>
+
+    <h1>
+        {{(assessment.total_score/assessment.total_score_possible)  * 100}}%
     </h1>
 {% endblock %}

@@ -7,7 +7,7 @@ class User_Assessment(sqla.Model):
     id = sqla.Column(sqla.Integer, primary_key=True)
     user_id = sqla.Column(sqla.Integer)
     total_score_possible = sqla.Column(sqla.Integer)
-    date_completed = sqla.Column(sqla.DateTime)
+    date_completed = sqla.Column(sqla.String)
     total_score = sqla.Column(sqla.Float)
     
 

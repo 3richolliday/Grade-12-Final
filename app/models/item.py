@@ -1,4 +1,6 @@
+from sqlalchemy import Enum
 from app.sqla import sqla
+from app.assess.enums import Language_Type
 
 class Item(sqla.Model):
     
@@ -7,6 +9,7 @@ class Item(sqla.Model):
     question = sqla.Column(sqla.String(128))
     answer = sqla.Column(sqla.String(128))
     weight = sqla.Column(sqla.Float)
+    language = sqla.Column(Enum(Language_Type), default=Language_Type.EN)
 
     def get_id(self):
         return self.id
@@ -22,4 +25,7 @@ class Item(sqla.Model):
     
     def get_weight(self):
         return self.weight
+    
+    def get_language(self):
+        return self.language
     
