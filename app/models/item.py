@@ -4,7 +4,7 @@ class Item(sqla.Model):
     
     id = sqla.Column(sqla.Integer, primary_key=True)
     type = sqla.Column(sqla.String(128)) 
-    text = sqla.Column(sqla.String(128))
+    question = sqla.Column(sqla.String(128))
     answer = sqla.Column(sqla.String(128))
     weight = sqla.Column(sqla.Float)
 
@@ -14,8 +14,8 @@ class Item(sqla.Model):
     def get_type(self):
         return self.type    
     
-    def get_text(self):
-        return self.text
+    def get_question(self):
+        return self.question
     
     def get_answer(self):
         return self.answer
