@@ -1,8 +1,8 @@
 from datetime import date, datetime
 from app.assess import bp
-from flask import render_template, session, redirect, url_for
+from flask import render_template, session, redirect, url_for, request
 from flask_login import login_required, current_user
-from app.assess.enums import Language_Type
+from app.assess.enums import Item_Type, Language_Type
 
 from app.models.item import Item
 from app.models.user_assessment import User_Assessment
@@ -50,32 +50,46 @@ def present_question():
     assessment = User_Assessment.query.filter((User_Assessment.user_id == current_user.id) &
         (User_Assessment.date_completed == None)).first()
     session[SESSION_VAR_ASSESSMENT_ID] = assessment.id
-
+    
     detail_for_next_question = get_next_assessment_detail(assessment);
     
     if detail_for_next_question:
-        
-        itemText = detail_for_next_question.item.question
-
-        parts = itemText.split('\\t')
-
-        question = parts[0]
-        distractorA = parts[1]
-        distractorB = parts[2]
-        distractorC = parts[3]
-        distractorD = parts[4]
 
         session[SESSION_VAR_ASSESSMENT_DETAIL_ID] = detail_for_next_question.id
-
-        return render_template('assess/present_question.html', 
-                               question=question,
-                               distractorA=distractorA,
-                               distractorB=distractorB,
-                               distractorC=distractorC,
-                               distractorD=distractorD)
+        
+        itemText = detail_for_next_question.item.question
+        if detail_for_next_question.item.type == Item_Type.MC:
+            return render_MC(detail_for_next_question)
+        else:
+            return render_FITB(detail_for_next_question)
     else:
         score_assessment(assessment);
         return render_template('assess/assessment_complete.html', assessment=assessment)
+
+def render_MC(detail_for_next_question):    
+    itemText = detail_for_next_question.item.question
+    
+    parts = itemText.split('\\t')
+
+    question = parts[0]
+    distractorA = parts[1]
+    distractorB = parts[2]
+    distractorC = parts[3]
+    distractorD = parts[4]
+
+    return render_template('assess/present_question.html', 
+                        question=question,
+                        distractorA=distractorA,
+                        distractorB=distractorB,
+                        distractorC=distractorC,
+                        distractorD=distractorD)
+
+def render_FITB(detail_for_next_question):
+    itemText = detail_for_next_question.item.question
+
+    return render_template('assess/present_question.html', 
+                                question=itemText)
+
 
 @bp.route('/present_question', methods=['POST'])
 @login_required
@@ -87,6 +101,8 @@ def present_question_post():
     assessment_detail_id = session[SESSION_VAR_ASSESSMENT_DETAIL_ID]
     detail = User_Assessment_Detail.query.filter(User_Assessment_Detail.id == assessment_detail_id).first()
 
+    r = request
+    
     detail.score = detail.item.weight
     sqla.session.commit()
 

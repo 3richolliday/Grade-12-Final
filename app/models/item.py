@@ -1,11 +1,11 @@
 from sqlalchemy import Enum
 from app.sqla import sqla
-from app.assess.enums import Language_Type
+from app.assess.enums import Item_Type, Language_Type
 
 class Item(sqla.Model):
     
     id = sqla.Column(sqla.Integer, primary_key=True)
-    type = sqla.Column(sqla.String(128)) 
+    type = sqla.Column(Enum(Item_Type))
     question = sqla.Column(sqla.String(128))
     answer = sqla.Column(sqla.String(128))
     weight = sqla.Column(sqla.Float)
