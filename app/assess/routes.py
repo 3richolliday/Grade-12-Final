@@ -82,7 +82,8 @@ def render_MC(detail_for_next_question):
                         distractorA=distractorA,
                         distractorB=distractorB,
                         distractorC=distractorC,
-                        distractorD=distractorD)
+                        distractorD=distractorD,
+                        free_response_visibility="hidden")
 
 def render_FITB(detail_for_next_question):
     itemText = detail_for_next_question.item.question
