@@ -5,7 +5,7 @@
         {{ question }}!
     </h1>
     <form method="post">
-        <div class="center" name="MC" style="display:{{ multiple_choice_visibility }}">
+        <div class="center" name="MC">
             <div class="radioLeft">
                 <input type="radio" name="distractor" value="{{ distractorA }}"/>
                 <label>{{ distractorA }}</label>
@@ -28,10 +28,7 @@
 
             
         </div>
-        <div name="FITB" style="display:{{ free_response_visibility }}">
-            <input class="input is-primary is-medium is-rounded"" type="text">
-        </div>        
         
-        <input type="submit" class="button is-link" value="Submit"></input>
+        <input type="submit" class="button is-link" value="Submit" formaction="{{url_for("assess.present_mc")}}"></input>
     </form>
 {% endblock %}

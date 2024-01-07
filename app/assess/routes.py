@@ -77,32 +77,39 @@ def render_MC(detail_for_next_question):
     distractorC = parts[3]
     distractorD = parts[4]
 
-    return render_template('assess/present_question.html', 
+    return render_template('assess/present_mc.html', 
                         question=question,
                         distractorA=distractorA,
                         distractorB=distractorB,
                         distractorC=distractorC,
-                        distractorD=distractorD,
-                        free_response_visibility="hidden")
+                        distractorD=distractorD)
 
 def render_FITB(detail_for_next_question):
     itemText = detail_for_next_question.item.question
 
-    return render_template('assess/present_question.html', 
+    return render_template('assess/present_fitb.html', 
                                 question=itemText)
 
-
-@bp.route('/present_question', methods=['POST'])
+@bp.route('/present_mc', methods=['POST'])
 @login_required
-def present_question_post():
+def present_mc():
+    r = request.form["distractor"]
+    return question_post_handler(r)
+
+@bp.route('/present_fitb', methods=['POST'])
+@login_required
+def present_fitb():
+    r = request.form["answer"]
+    return question_post_handler(r)
+
+
+def question_post_handler(r):
     
     assessment_id = session[SESSION_VAR_ASSESSMENT_ID]
     assessment = User_Assessment.query.filter(User_Assessment.id == assessment_id)
 
     assessment_detail_id = session[SESSION_VAR_ASSESSMENT_DETAIL_ID]
     detail = User_Assessment_Detail.query.filter(User_Assessment_Detail.id == assessment_detail_id).first()
-
-    r = request
     
     detail.score = detail.item.weight
     sqla.session.commit()

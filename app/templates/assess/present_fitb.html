@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="title">
+        {{ question }}!
+    </h1>
+    <form method="post">
+        <div name="FITB">
+            <input name="answer" class="input is-primary is-medium is-rounded"" type="text">
+        </div>        
+        
+        <input type="submit" class="button is-link" value="Submit" formaction="{{url_for("assess.present_fitb")}}"></input>
+    </form>
+{% endblock %}
