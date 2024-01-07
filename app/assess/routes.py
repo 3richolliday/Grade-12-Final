@@ -54,9 +54,25 @@ def present_question():
     detail_for_next_question = get_next_assessment_detail(assessment);
     
     if detail_for_next_question:
-        question = detail_for_next_question.item.question   
+        
+        itemText = detail_for_next_question.item.question
+
+        parts = itemText.split('\\t')
+
+        question = parts[0]
+        distractorA = parts[1]
+        distractorB = parts[2]
+        distractorC = parts[3]
+        distractorD = parts[4]
+
         session[SESSION_VAR_ASSESSMENT_DETAIL_ID] = detail_for_next_question.id
-        return render_template('assess/present_question.html', question=question)
+
+        return render_template('assess/present_question.html', 
+                               question=question,
+                               distractorA=distractorA,
+                               distractorB=distractorB,
+                               distractorC=distractorC,
+                               distractorD=distractorD)
     else:
         score_assessment(assessment);
         return render_template('assess/assessment_complete.html', assessment=assessment)

@@ -2,9 +2,33 @@
 
 {% block content %}
     <h1 class="title">
-        Question: {{ question }}!
+        {{ question }}!
     </h1>
+    <div class="center" name="MC">
+        <div class="radioLeft">
+            <input type="radio" name="distractor" value="{{ distractorA }}"/>
+            <label>{{ distractorA }}</label>
+        </div>
+
+        <div class="radioLeft">
+            <input type="radio" name="distractor" value="{{ distractorB }}"/>
+            <label>{{ distractorB }}</label>
+        </div>
+
+        <div class="radioLeft">
+            <input type="radio" name="distractor" value="{{ distractorC }}"/>
+            <label>{{ distractorC }}</label>
+        </div>
+
+        <div class="radioLeft">
+            <input type="radio" name="distractor" value="{{ distractorD }}"/>
+            <label>{{ distractorD }}</label>
+        </div>
+    </div>
+    <div name="FITB" hidden>
+        <input class="input is-primary is-medium is-rounded"" type="text">
+    </div>        
     <form method="post">
-        <input type="submit" value="Submit"></button>
+        <input type="submit" class="button is-link" value="Submit"></button>
     </form>
 {% endblock %}
