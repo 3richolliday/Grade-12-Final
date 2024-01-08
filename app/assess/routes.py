@@ -1,6 +1,7 @@
 from datetime import date, datetime
+import logging
 from app.assess import bp
-from flask import render_template, session, redirect, url_for, request
+from flask import flash, render_template, session, redirect, url_for, request
 from flask_login import login_required, current_user
 from app.assess.enums import Item_Type, Language_Type
 
@@ -93,14 +94,26 @@ def render_FITB(detail_for_next_question):
 @bp.route('/present_mc', methods=['POST'])
 @login_required
 def present_mc():
-    r = request.form["distractor"]
-    return question_post_handler(r)
+    try:
+        r = request.form["distractor"]
+        return question_post_handler(r)
+    except:
+        logging.exception('')
+
+    flash('Please select an answer.')
+    return redirect(url_for("assess.present_question"))
 
 @bp.route('/present_fitb', methods=['POST'])
 @login_required
 def present_fitb():
-    r = request.form["answer"]
-    return question_post_handler(r)
+    try:
+        r = request.form["answer"]
+        return question_post_handler(r)
+    except:
+        logging.exception('')
+    
+    flash('Please select an answer.')
+    return redirect(url_for("assess.present_question"))
 
 
 def question_post_handler(r):
