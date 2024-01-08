@@ -23,25 +23,38 @@ def select_language():
 @login_required
 def select_language_post():
 
-    assessment = User_Assessment(user_id=current_user.id)
-
-    sqla.session.add(assessment)
-    sqla.session.commit()
+    try:
     
-    items = Item.query.filter(Item.language == Language_Type.EN)
-    
-    user_assessment_details = []
+        language = request.form["language"]
 
-    for item in items:
-        user_assessment_detail = User_Assessment_Detail(user_assessment_id=assessment.id, item_id=item.id)
-        user_assessment_details.append(user_assessment_detail)
+        if language == 'EN':
+            language = Language_Type.EN
+        else:
+            language = Language_Type.FR    
+        
+        assessment = User_Assessment(user_id=current_user.id)
 
-    sqla.session.add(assessment)
-    sqla.session.add_all(user_assessment_details)
-    sqla.session.commit()
+        sqla.session.add(assessment)
+        sqla.session.commit()
+        
+        items = Item.query.filter(Item.language == language)
+        
+        user_assessment_details = []
 
-    return redirect(url_for("assess.present_question"))
+        for item in items:
+            user_assessment_detail = User_Assessment_Detail(user_assessment_id=assessment.id, item_id=item.id)
+            user_assessment_details.append(user_assessment_detail)
 
+        sqla.session.add(assessment)
+        sqla.session.add_all(user_assessment_details)
+        sqla.session.commit()
+
+        return redirect(url_for("assess.present_question"))
+    except:
+        logging.exception('')
+
+    flash('Please select a language.')
+    return redirect(url_for("assess.select_language"))
 
 @bp.route('/present_question')
 @login_required
@@ -65,7 +78,9 @@ def present_question():
             return render_FITB(detail_for_next_question)
     else:
         score_assessment(assessment);
-        return render_template('assess/assessment_complete.html', assessment=assessment)
+
+        assessments = User_Assessment.query.filter(User_Assessment.user_id == current_user.id)
+        return render_template('assess/assessment_complete.html', assessment=assessment, assessments=assessments)
 
 def render_MC(detail_for_next_question):    
     itemText = detail_for_next_question.item.question

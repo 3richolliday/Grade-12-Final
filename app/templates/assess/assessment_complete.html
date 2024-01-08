@@ -14,4 +14,14 @@
     <h1>
         {{(assessment.total_score/assessment.total_score_possible)  * 100}}%
     </h1>
+
+    <h1>Previous quizes taken</h1>
+    <ul>
+        {% for assessment in assessments %}
+        <li>
+            On {{assessment.date_completed}}
+            You achieved {{assessment.total_score}} out of {{assessment.total_score_possible}}
+        </li>
+        {% endfor %}
+    </ul>
 {% endblock %}

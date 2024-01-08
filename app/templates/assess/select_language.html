@@ -4,16 +4,23 @@
     <h1 class="title">
         Welcome, {{ name }}!
     </h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="notification is-danger">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
 
     Ready to take a test?
 
     <form method="post">
         <div>
-            <input type="radio" name="language" value="English">
+            <input type="radio" name="language" value="EN">
             <label>English</label>
         </div>
         <div>
-            <input type="radio" name="language" value="French">
+            <input type="radio" name="language" value="FR">
             <label>French</label>
         </div>
         <button>Start Test</button>
