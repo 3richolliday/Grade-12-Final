@@ -35,3 +35,7 @@
 **Article:** "Flask-Login"  
 **Source:** https://flask-login.readthedocs.io/en/latest/  
 **Reason:** Researching an off-the-shelf user management extenstion 
+
+**Article:** "Flask-Moment"  
+**Source:** https://flask-moment.readthedocs.io/en/latest/  
+**Reason:** Lookiung for a way to format datetime in the jinja templates 

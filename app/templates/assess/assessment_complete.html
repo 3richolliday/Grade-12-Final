@@ -2,25 +2,23 @@
 
 {% block content %}
     <h1 class="title">
-        You have completed the assessment!
-
-        {{assessment.date_completed}}
+        Congratulations, you have completed the assessment!
     </h1>
 
     <h1>
         You achieved {{assessment.total_score}} out of {{assessment.total_score_possible}}
     </h1>
 
-    <h1>
+    <h1 class="title is-1">
         {{(assessment.total_score/assessment.total_score_possible)  * 100}}%
     </h1>
 
-    <h1>Previous quizes taken</h1>
+    <h1 class="title is-4">Previous quizes taken</h1>
     <ul>
         {% for assessment in assessments %}
         <li>
-            On {{assessment.date_completed}}
-            You achieved {{assessment.total_score}} out of {{assessment.total_score_possible}}
+            On {{assessment.date_completed}},
+            you achieved {{assessment.total_score}} out of {{assessment.total_score_possible}}
         </li>
         {% endfor %}
     </ul>
