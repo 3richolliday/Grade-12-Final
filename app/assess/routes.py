@@ -139,7 +139,11 @@ def question_post_handler(r):
     assessment_detail_id = session[SESSION_VAR_ASSESSMENT_DETAIL_ID]
     detail = User_Assessment_Detail.query.filter(User_Assessment_Detail.id == assessment_detail_id).first()
     
-    detail.score = detail.item.weight
+    if r.lower() == detail.item.answer.lower():
+        detail.score = detail.item.weight
+    else:
+        detail.score = 0
+
     sqla.session.commit()
 
     return redirect(url_for("assess.present_question"))
