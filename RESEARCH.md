@@ -38,4 +38,8 @@
 
 **Article:** "Flask-Moment"  
 **Source:** https://flask-moment.readthedocs.io/en/latest/  
-**Reason:** Lookiung for a way to format datetime in the jinja templates 
+**Reason:** Looking for a way to format datetime in the jinja templates 
+
+**Article:** "Bulma.io"  
+**Source:** https://bulma.io  
+**Reason:** Researching a third-party css module to speed up development 
