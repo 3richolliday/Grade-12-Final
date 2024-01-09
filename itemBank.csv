@@ -1,0 +1,31 @@
+﻿id,type,question,answer,weight,language
+,MC,What is the word for a baby dog?\tCalf\tPuppy\tFoal\tPIglet,Puppy,0.5,EN
+,MC,What is the object pronoun for the subject pronoun 'he'?\tThem\tThose\tHim\tEh,Him,0.5,EN
+,MC,What is the pronoun that functions as the object or a verb or preposition?\tWho\tWhom\tThem\tMe,Whom,0.5,EN
+,MC,They ___ her and trusted her for years.\tknow\thad known\tknew\tknown,knew,0.5,EN
+,MC,Every morning she ______________ up early and gets ready for work.\tis waking\thas woken\thad woken\twakes,wakes,0.5,EN
+,MC,World war I and World war II took place ______________ the 20th century.\ton\tin\tat\tinto,in,0.5,EN
+,MC,"I wanted to go to the park, ______________ my mother refused.\tbut\tor\tso\tand",but,0.5,EN
+,MC,"This must not happen again, ______________ you will be dismissed.\tor\tbut\tand\tso",or,0.5,EN
+,MC,"They built this temple 3,000 years ago. This must ______________ a great civilization.\tnot have been\twas\thas been\thave been",have been,0.5,EN
+,MC,C'est quoi ce mot : cheval ?\tFish\tHouse\tHaircut\tHorse,Horse,0.5,FR
+,MC,C'est quoi ce mot : voiture ?\tKitchen\tCar\tBoat\tCarriage,Car,0.5,FR
+,MC,C'est quoi ce mot : bateau ?\tDonkey\tBoat\tScooter\tTable,boat,0.5,FR
+,MC,C'est quoi ce mot : singe ?\tHippo\tDuck\tMonkey\tSpider,monkey,0.5,FR
+,MC,C'est quoi ce mot : chaise ?\tLamp\tChair\tSeat\tStool,chair,0.5,FR
+,MC,C'est quoi ce mot : piscine ?\tToilet\tOuthouse\tPool\tPot,Pool,0.5,FR
+,MC,C'est quoi ce mot : frère ?\tFather\tBrother\tSister\tMother,brother,0.5,FR
+,MC,C'est quoi ce mot : sœur ?\tFather\tBrother\tSister\tMother,sister,0.5,FR
+,MC,C'est quoi ce mot : souris ?\tRat\tCat\tMouse\tSnake,mouse,0.5,FR
+,MC,C'est quoi ce mot : serpent ?\tRat\tCat\tDog\tSnake,snake,0.5,FR
+,MC,C'est quoi ce mot : fromage ?\tCake\tSausage\tSandwich\tCheese,cheese,0.5,FR
+,FITB,The colour of an apple is?,Green,0.5,EN
+,FITB,The third day of the week (Starting from Sunday) is?,Tuesday,0.5,EN
+,FITB,What is the plural of fish?,Fish,0.5,EN
+,FITB,What is a group of fish called?,School,0.5,EN
+,FITB,What is a group of crows called?,Murder,0.5,EN
+,FITB,La couleur d'une pomme est ?,verte,0.5,FR
+,FITB,Le troisième jour de la semaine (à partir du dimanche) est ?,Mardi,0.5,FR
+,FITB,Quel est le pluriel de poisson ?,poisson,0.5,FR
+,FITB,Qu'est-ce que 12 multiplié par deux,vingt-quatre,0.5,FR
+,FITB,Quelle est la capitale de la France,paris,0.5,FR
