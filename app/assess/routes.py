@@ -74,8 +74,10 @@ def present_question():
         itemText = detail_for_next_question.item.question
         if detail_for_next_question.item.type == Item_Type.MC:
             return render_MC(detail_for_next_question)
-        else:
+        elif detail_for_next_question.item.type == Item_Type.FITB:
             return render_FITB(detail_for_next_question)
+        # else:
+
     else:
         score_assessment(assessment);
 
