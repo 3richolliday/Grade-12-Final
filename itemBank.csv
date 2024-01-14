@@ -23,7 +23,7 @@
 ,FITB,The third day of the week (Starting from Sunday) is?,Tuesday,0.5,EN
 ,FITB,What is the plural of fish?,Fish,0.5,EN
 ,FITB,What is a group of fish called?,School,0.5,EN
-,FITB,What is a group of crows called?,Murder,0.5,EN
+,FITB,"Is it ""I have less photos than last year"" or ""I have fewer photos than last year""",fewer,0.5,EN
 ,FITB,La couleur d'une pomme est ?,verte,0.5,FR
 ,FITB,Le troisième jour de la semaine (à partir du dimanche) est ?,Mardi,0.5,FR
 ,FITB,Quel est le pluriel de poisson ?,poisson,0.5,FR

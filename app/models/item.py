@@ -10,6 +10,7 @@ class Item(sqla.Model):
     answer = sqla.Column(sqla.String(128))
     weight = sqla.Column(sqla.Float)
     language = sqla.Column(Enum(Language_Type), default=Language_Type.EN)
+    # image = sqla.Column(sqla.Blob)
 
     def get_id(self):
         return self.id
