@@ -1,5 +1,6 @@
 from datetime import date, datetime
 import logging
+import random
 from app.assess import bp
 from flask import flash, render_template, session, redirect, url_for, request
 from flask_login import login_required, current_user
@@ -37,11 +38,14 @@ def select_language_post():
         sqla.session.add(assessment)
         sqla.session.commit()
         
+        # Get the list of items to be presented, and shuffle them
         items = Item.query.filter(Item.language == language)
+        shuffled_items = items.all()
+        random.shuffle(shuffled_items)
         
         user_assessment_details = []
 
-        for item in items:
+        for item in shuffled_items:
             user_assessment_detail = User_Assessment_Detail(user_assessment_id=assessment.id, item_id=item.id)
             user_assessment_details.append(user_assessment_detail)
 
